@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T F Diamond Wellness Service</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #333; }
+    .hero {
+      background-image: url('fedett_jakuzzi.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 10rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 1rem;
+      display: inline-block;
+    }
+    .cta-btn {
+      background: #00aaff;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+    .lang-switch {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    .lang-switch a {
+      color: white;
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+    .company-info {
+      background: #f0f0f0;
+      padding: 2rem;
+      text-align: center;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      background-color: #fafafa;
+    }
+    .service {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .contact {
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .contact button {
+      background-color: #0066cc;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background-color: #004999;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <h1>T F DIAMOND WELLNESS SERVICE</h1>
+      <p id="hero-text">Luxus wellness otthon – mi gondoskodunk róla.</p>
+      <a href="#kapcsolat" class="cta-btn" id="cta-button">Kapcsolatfelvétel</a>
+      <div class="lang-switch">
+        <a href="?lang=hu">HU</a> | <a href="?lang=sk">SK</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="company-info">
+    <p><strong>IČO:</strong> 46405542 | <strong>DIČ:</strong> 1084301889</p>
+    <p><strong>Telefon:</strong> +421 915 036 068 | <strong>Email:</strong> tokarahm@gmail.com</p>
+  </section>
+
+  <section class="services" id="services">
+    <div class="service">
+      <h3 id="service1-title">Telepítés</h3>
+      <p id="service1-desc">Új jacuzzik és szaunák beüzemelése</p>
+    </div>
+    <div class="service">
+      <h3 id="service2-title">Szerviz</h3>
+      <p id="service2-desc">Hibák gyors javítása</p>
+    </div>
+    <div class="service">
+      <h3 id="service3-title">Karbantartás</h3>
+      <p id="service3-desc">Időszakos tisztítás és ellenőrzés</p>
+    </div>
+    <div class="service">
+      <h3 id="service4-title">Modernizálás</h3>
+      <p id="service4-desc">Régi rendszerek frissítése</p>
+    </div>
+  </section>
+
+  <section id="kapcsolat" class="contact">
+    <h2 id="contact-title">Kapcsolatfelvétel</h2>
+    <form action="mailto:tokarahm@gmail.com" method="post" enctype="text/plain">
+      <label for="name" id="label-name">Név:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email" id="label-email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message" id="label-message">Üzenet:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit" id="submit-button">Küldés</button>
+    </form>
+  </section>
+
+  <script>
+    const translations = {
+      hu: {
+        heroText: "Luxus wellness otthon – mi gondoskodunk róla.",
+        ctaButton: "Kapcsolatfelvétel",
+        contactTitle: "Kapcsolatfelvétel",
+        labelName: "Név:",
+        labelEmail: "Email:",
+        labelMessage: "Üzenet:",
+        submitButton: "Küldés",
+        service1: ["Telepítés", "Új jacuzzik és szaunák beüzemelése"],
+        service2: ["Szerviz", "Hibák gyors javítása"],
+        service3: ["Karbantartás", "Időszakos tisztítás és ellenőrzés"],
+        service4: ["Modernizálás", "Régi rendszerek frissítése"]
+      },
+      sk: {
+        heroText: "Luxusný wellness u vás doma – o všetko sa postaráme.",
+        ctaButton: "Kontaktujte nás",
+        contactTitle: "Kontakt",
+        labelName: "Meno:",
+        labelEmail: "Email:",
+        labelMessage: "Správa:",
+        submitButton: "Odoslať",
+        service1: ["Inštalácia", "Odborné sprevádzkovanie víriviek a sáun"],
+        service2: ["Servis", "Rýchle opravy porúch"],
+        service3: ["Údržba", "Pravidelné čistenie a kontrola"],
+        service4: ["Modernizácia", "Obnova a vylepšenie starších systémov"]
+      }
+    };
+
+    const lang = new URLSearchParams(window.location.search).get("lang") || "hu";
+    document.getElementById("hero-text").textContent = translations[lang].heroText;
+    document.getElementById("cta-button").textContent = translations[lang].ctaButton;
+    document.getElementById("contact-title").textContent = translations[lang].contactTitle;
+    document.getElementById("label-name").textContent = translations[lang].labelName;
+    document.getElementById("label-email").textContent = translations[lang].labelEmail;
+    document.getElementById("label-message").textContent = translations[lang].labelMessage;
+    document.getElementById("submit-button").textContent = translations[lang].submitButton;
+    document.getElementById("service1-title").textContent = translations[lang].service1[0];
+    document.getElementById("service1-desc").textContent = translations[lang].service1[1];
+    document.getElementById("service2-title").textContent = translations[lang].service2[0];
+    document.getElementById("service2-desc").textContent = translations[lang].service2[1];
+    document.getElementById("service3-title").textContent = translations[lang].service3[0];
+    document.getElementById("service3-desc").textContent = translations[lang].service3[1];
+    document.getElementById("service4-title").textContent = translations[lang].service4[0];
+    document.getElementById("service4-desc").textContent = translations[lang].service4[1];
+  </script>
+
+</body>
+</html>
