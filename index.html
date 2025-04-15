@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T F Diamond Wellness Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1601890581270-624c1e652f1b?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      position: relative;
+    }
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: gold;
+    }
+    .hero-content {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #333;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-box {
+      background: #f2f2f2;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .contact-info {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div><strong>T F DIAMOND</strong></div>
+      <div>
+        <a href="#about">Rólunk</a>
+        <a href="#services">Szolgáltatásaink</a>
+        <a href="#contact">Kapcsolat</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>T F DIAMOND WELLNESS SERVICE</h1>
+      <p>Luxus wellness otthon – mi gondoskodunk róla.</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>Rólunk</h2>
+    <p>Cégünk a wellness rendszerek – főként jakuzzik és szaunák – szakszerű telepítésére, karbantartására és javítására szakosodott. Több éves tapasztalattal és precíz hozzáállással biztosítjuk ügyfeleink számára az otthoni nyugalmat és kényelmet. Legyen szó új rendszer telepítéséről vagy egy meglévő felújításáról – mi minden lépésnél ott vagyunk.</p>
+    <div class="contact-info">
+      IČO: 46405542<br/>
+      DIČ: 1084301889<br/>
+      E-mail: tokarahm@gmail.com
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Szolgáltatásaink</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Telepítés</h3>
+        <p>Új jakuzzi vagy szauna rendszer teljes körű beüzemelése.</p>
+      </div>
+      <div class="service-box">
+        <h3>Szerviz</h3>
+        <p>Hibák gyors elhárítása, technikai javítások, ellenőrzések.</p>
+      </div>
+      <div class="service-box">
+        <h3>Karbantartás</h3>
+        <p>Rendszeres tisztítás és időszakos vizsgálatok.</p>
+      </div>
+      <div class="service-box">
+        <h3>Modernizálás</h3>
+        <p>Elavult rendszerek fejlesztése és bővítése.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kapcsolat</h2>
+    <p>Vegye fel velünk a kapcsolatot e-mailben: <strong>tokarahm@gmail.com</strong><br/>
+    vagy telefonon: <strong>+421 915 036 068</strong></p>
+  </section>
+
+</body>
+</html>
