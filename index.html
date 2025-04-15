@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T F DIAMOND WELLNESS SERVICE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: url('hero.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px #000;
+    }
+    header p {
+      font-size: 1.5em;
+      text-shadow: 0 0 8px #000;
+    }
+    header button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    header button:hover {
+      background: #009fb0;
+    }
+    nav {
+      text-align: center;
+      padding: 10px;
+      background: #e0f7fa;
+    }
+    nav button {
+      margin: 0 10px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      background: #00acc1;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: #007c91;
+    }
+    section {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+    .feature {
+      flex: 1;
+      min-width: 200px;
+    }
+    .feature img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    .cta {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .cta h2 {
+      color: #fff;
+    }
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #00bcd4;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="hero-title">Luxus wellness az otthonodban</h1>
+    <p id="hero-sub">Prémium jakuzzi- és szaunaszerviz</p>
+    <button onclick="scrollToCTA()" id="hero-button">Lépj kapcsolatba velünk</button>
+  </header>
+
+  <nav>
+    <button onclick="setLang('hu')">Magyar</button>
+    <button onclick="setLang('sk')">Slovenský</button>
+  </nav>
+
+  <section>
+    <h2 id="slogan">Gyorsaság. Precizitás. Elégedettség.</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/spa.png"/>
+        <p id="f1">Jakuzzi javítás</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/steam-room.png"/>
+        <p id="f2">Szauna karbantartás</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/maintenance.png"/>
+        <p id="f3">Diagnosztika és szűrőcsere</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta" id="cta">
+    <h2 id="cta-title">Foglalj időpontot most!</h2>
+    <p>Email: tokarahm@gmail.com</p>
+    <p>Telefon: +421 915 036 068</p>
+    <p>IČO: 46405542 | DIČ: 1084301889</p>
+    <a href="tel:+421915036068" id="cta-btn">Hívj most</a>
+  </div>
+
+  <footer>
+    &copy; 2025 T F DIAMOND WELLNESS SERVICE
+  </footer>
+
+  <script>
+    function scrollToCTA() {
+      document.getElementById("cta").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const translations = {
+      hu: {
+        hero: "Luxus wellness az otthonodban",
+        sub: "Prémium jakuzzi- és szaunaszerviz",
+        btn: "Lépj kapcsolatba velünk",
+        slogan: "Gyorsaság. Precizitás. Elégedettség.",
+        f1: "Jakuzzi javítás",
+        f2: "Szauna karbantartás",
+        f3: "Diagnosztika és szűrőcsere",
+        ctaTitle: "Foglalj időpontot most!",
+        ctaBtn: "Hívj most"
+      },
+      sk: {
+        hero: "Luxusný wellness u vás doma",
+        sub: "Prémiový servis víriviek a sáun",
+        btn: "Kontaktujte nás",
+        slogan: "Rýchlosť. Precíznosť. Spokojnosť.",
+        f1: "Oprava víriviek",
+        f2: "Údržba sáun",
+        f3: "Diagnostika a výmena filtrov",
+        ctaTitle: "Rezervujte si termín teraz!",
+        ctaBtn: "Zavolajte nám"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("hero-title").innerText = translations[lang].hero;
+      document.getElementById("hero-sub").innerText = translations[lang].sub;
+      document.getElementById("hero-button").innerText = translations[lang].btn;
+      document.getElementById("slogan").innerText = translations[lang].slogan;
+      document.getElementById("f1").innerText = translations[lang].f1;
+      document.getElementById("f2").innerText = translations[lang].f2;
+      document.getElementById("f3").innerText = translations[lang].f3;
+      document.getElementById("cta-title").innerText = translations[lang].ctaTitle;
+      document.getElementById("cta-btn").innerText = translations[lang].ctaBtn;
+    }
+  </script>
+</body>
+</html>
