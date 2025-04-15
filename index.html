@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T F Diamond Wellness Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .hero {
+      background-image: url('fedett_jakuzzi.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 1rem;
+      display: inline-block;
+    }
+    .cta-btn {
+      background: #00aaff;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-top: 1rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: #0077cc;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .lang-switch {
+      margin-top: 1rem;
+    }
+    .lang-switch a {
+      color: white;
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+    .company-info {
+      background: #f4f4f4;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background-color: #fafafa;
+    }
+    .service {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .service.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .contact {
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 1rem;
+      max-width: 600px;
+      margin: 3rem auto;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .contact button {
+      background-color: #0066cc;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .contact button:hover {
+      background-color: #004999;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>T F DIAMOND WELLNESS SERVICE</h1>
+      <p id="hero-text">...</p>
+      <a href="#kapcsolat" class="cta-btn" id="cta-button">...</a>
+      <div class="lang-switch">
+        <a href="?lang=hu">HU</a> | <a href="?lang=sk">SK</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="company-info">
+    <p><strong>IČO:</strong> 46405542 | <strong>DIČ:</strong> 1084301889</p>
+    <p><strong>Telefon:</strong> +421 915 036 068 | <strong>Email:</strong> tokarahm@gmail.com</p>
+  </section>
+
+  <section class="services" id="services">
+    <div class="service">
+      <h3 id="service1-title">...</h3>
+      <p id="service1-desc">...</p>
+    </div>
+    <div class="service">
+      <h3 id="service2-title">...</h3>
+      <p id="service2-desc">...</p>
+    </div>
+    <div class="service">
+      <h3 id="service3-title">...</h3>
+      <p id="service3-desc">...</p>
+    </div>
+    <div class="service">
+      <h3 id="service4-title">...</h3>
+      <p id="service4-desc">...</p>
+    </div>
+  </section>
+
+  <section id="kapcsolat" class="contact">
+    <h2 id="contact-title">...</h2>
+    <form action="mailto:tokarahm@gmail.com" method="post" enctype="text/plain">
+      <label for="name" id="label-name">...</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email" id="label-email">...</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message" id="label-message">...</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit" id="submit-button">...</button>
+    </form>
+  </section>
+
+  <script>
+    // Fade-in animáció szolgáltatásokhoz
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.service').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Nyelvi fordítások
+    const translations = {
+      hu: {
+        heroText: "Luxus wellness otthon – mi gondoskodunk róla.",
+        ctaButton: "Kapcsolatfelvétel",
+        contactTitle: "Kapcsolatfelvétel",
+        labelName: "Név:",
+        labelEmail: "Email:",
+        labelMessage: "Üzenet:",
+        submitButton: "Küldés",
+        service1: ["Telepítés", "Jacuzzik és szaunák beüzemelése"],
+        service2: ["Szerviz", "Gyors hibaelhárítás"],
+        service3: ["Karbantartás", "Tisztítás és ellenőrzés"],
+        service4: ["Modernizálás", "Régi rendszerek frissítése"]
+      },
+      sk: {
+        heroText: "Luxusný wellness u vás doma – o všetko sa postaráme.",
+        ctaButton: "Kontaktujte nás",
+        contactTitle: "Kontakt",
+        labelName: "Meno:",
+        labelEmail: "Email:",
+        labelMessage: "Správa:",
+        submitButton: "Odoslať",
+        service1: ["Inštalácia", "Sprevádzkovanie víriviek a sáun"],
+        service2: ["Servis", "Rýchle opravy porúch"],
+        service3: ["Údržba", "Pravidelné čistenie a kontrola"],
+        service4: ["Modernizácia", "Obnova starších systémov"]
+      }
+    };
+
+    const lang = new URLSearchParams(window.location.search).get("lang") || "hu";
+    const t = translations[lang];
+
+    document.getElementById("hero-text").textContent = t.heroText;
+    document.getElementById("cta-button").textContent = t.ctaButton;
+    document.getElementById("contact-title").textContent = t.contactTitle;
+    document.getElementById("label-name").textContent = t.labelName;
+    document.getElementById("label-email").textContent = t.labelEmail;
+    document.getElementById("label-message").textContent = t.labelMessage;
+    document.getElementById("submit-button").textContent = t.submitButton;
+
+    document.getElementById("service1-title").textContent = t.service1[0];
+    document.getElementById("service1-desc").textContent = t.service1[1];
+    document.getElementById("service2-title").textContent = t.service2[0];
+    document.getElementById("service2-desc").textContent = t.service2[1];
+    document.getElementById("service3-title").textContent = t.service3[0];
+    document.getElementById("service3-desc").textContent = t.service3[1];
+    document.getElementById("service4-title").textContent = t.service4[0];
+    document.getElementById("service4-desc").textContent = t.service4[1];
+  </script>
+
+</body>
+</html>
