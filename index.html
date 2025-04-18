@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TF DIAMOND WELLNESS SERVICE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    header.hero {
+      background-image: url('images/header-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+      color: white;
+    }
+
+    .overlay {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+    }
+
+    .overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .overlay p {
+      font-size: 1.5rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <nav>
+      <div class="logo">TF DIAMOND</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#rolunk">Rólunk</a></li>
+        <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+      </ul>
+    </nav>
+    <div class="overlay">
+      <div>
+        <h1>TF DIAMOND WELLNESS SERVICE</h1>
+        <p>Jacuzzi & szauna szerviz – prémium megoldások</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="rolunk">
+    <h2>Rólunk</h2>
+    <p>
+      Cégünk, a TF Diamond Wellness Service, prémium minőségű jakuzzi és szauna karbantartással, javítással és tisztítással foglalkozik.
+      Küldetésünk, hogy minden ügyfelünk otthonában luxus élményt biztosítsunk megbízható és professzionális szervizszolgáltatásainkkal.
+    </p>
+  </section>
+
+  <section id="szolgaltatasok">
+    <h2>Szolgáltatásaink</h2>
+    <ul>
+      <li>Jakuzzi karbantartás és szerviz</li>
+      <li>Szauna javítás és tisztítás</li>
+      <li>Vízkezelés és higiéniai ellenőrzés</li>
+      <li>Alkatrészek beszerzése és cseréje</li>
+    </ul>
+  </section>
+
+  <section id="kapcsolat">
+    <h2>Kapcsolat</h2>
+    <p>
+      Telefonszám: +421 123 456 789<br />
+      E-mail: info@tfdiamond.sk<br />
+      IČO: 46405542 | DIČ: 1084301889
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 TF Diamond Wellness Service – Minden jog fenntartva
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
