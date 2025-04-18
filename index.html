@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TF DIAMOND WELLNESS SERVICE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    header {
+      background-image: url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TF DIAMOND</div>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+    <ul>
+      <li><a href="#rolunk">Rólunk</a></li>
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>TF DIAMOND WELLNESS SERVICE</h1>
+      <p>Jacuzzi & szauna szerviz – prémium megoldások</p>
+    </div>
+  </header>
+
+  <section id="rolunk">
+    <h2>Rólunk</h2>
+    <p>
+      Cégünk prémium wellness megoldásokra specializálódott, különös figyelmet fordítva a jakuzzik és szaunák szakszerű karbantartására és javítására.
+    </p>
+  </section>
+
+  <section id="szolgaltatasok">
+    <h2>Szolgáltatásaink</h2>
+    <ul>
+      <li>Jakuzzi karbantartás és javítás</li>
+      <li>Szauna tisztítás és szerviz</li>
+      <li>Vízkezelési tanácsadás</li>
+      <li>Alkatrészbeszerzés</li>
+    </ul>
+  </section>
+
+  <section id="kapcsolat">
+    <h2>Kapcsolat</h2>
+    <p>
+      Telefonszám: +421 123 456 789<br />
+      E-mail: info@tfdiamond.sk<br />
+      IČO: 46405542 | DIČ: 1084301889
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 TF Diamond Wellness Service – Minden jog fenntartva
+  </footer>
+
+</body>
+</html>
